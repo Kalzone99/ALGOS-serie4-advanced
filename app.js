@@ -178,7 +178,7 @@ const ReverseArray = (initialArray) => {
     let end = initialArray.length -1;
     //As long as left(here the array index 1 on 7) is smaller than the end index ...
     while (begin < end) {
-        //create the "taxi" that is moving the indexes around... at index 0
+        //create the "taxi/juggler" that is moving the indexes around... at index 0
         let move = initialArray[begin];
         //then whatever is at index 0 goes to the end [end, x, y, z, a, c, beginning]
         initialArray[begin] = initialArray[end]
@@ -187,6 +187,7 @@ const ReverseArray = (initialArray) => {
         //then left/beginning index ++ to jump to next one WHILE the right/end one goes down the array
         begin ++;
         end --;
+
     }
     //added after checking the line 195!!!
     console.log(initialArray)    
@@ -223,7 +224,7 @@ const fibonacci = (numArrayLength) => {
     const result = [1, 1]
     //Since we are adding the two previous numbers in the array let's begin at index 2 so we can add index0 to index1 and then iterate till its the numArrayLength given
     for (i = 2; i < numArrayLength ; i++) {
-        //calculate the (index 1 position before i) + (index 2 position before i)
+        //calculate the (index nr°1 [0] position before i) + (index n°2 [1] position before i)
         const next = result[i - 1] + result[i - 2]
         result.push(next)
         }
@@ -232,3 +233,14 @@ const fibonacci = (numArrayLength) => {
 fibonacci(4) //----> [1, 1, 2, 3]
 fibonacci(9) //----> [1, 1, 2, 3, 5, 8, 13, 21, 34]
 fibonacci(6) //----> [1, 1, 2, 3, 5, 8]
+
+//
+
+const numsAddUP = (n) => {
+    return n * (n + 1) /2 ;
+}
+
+
+console.log(numsAddUP(10));
+
+
